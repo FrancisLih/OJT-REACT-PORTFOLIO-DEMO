@@ -14,3 +14,11 @@ RewriteRule ^portfolio$ controllers/portfolio/portfolio.php [L]
 RewriteRule ^portfolio/([0-9]+)$ controllers/portfolio/portfolio.php?portfolioid=$1 [L]
 RewriteRule ^portfolio/active/([0-9]+)$ controllers/portfolio/active.php?portfolioid=$1 [L]
 RewriteRule ^portfolio/search$ controllers/portfolio/search.php [L]
+
+### SETTING ROLES ###
+RewriteRule ^works$ controllers/works/works.php [L]
+RewriteRule ^works/([0-9]+)$ controllers/works/works.php?worksid=$1 [L]
+RewriteRule ^works/active/([0-9]+)$ controllers/works/active.php?worksid=$1 [L]
+RewriteRule ^works/search$ controllers/works/search.php [L]
+
+RewriteRule ^upload/photo$ core/upload-photo.php [L]

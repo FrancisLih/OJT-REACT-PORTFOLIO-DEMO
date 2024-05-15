@@ -71,7 +71,7 @@ const PortfolioTable = ({isLoading, isFetching, portfolio, setItemEdit}) => {
                 
                     {portfolio?.data.map((item,key)=>(
                          <tr key={key}>
-                         <td>{counter}</td>
+                         <td>{counter++}</td>
                          <td>{item.portfolio_title}</td>
                          <td>{item.portfolio_category}</td>
                          <td>{item.portfolio_publish_date}</td>

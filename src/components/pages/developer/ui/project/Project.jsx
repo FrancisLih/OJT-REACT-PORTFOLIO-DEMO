@@ -5,6 +5,7 @@ import ModalWrapper from '../../../../partials/modals/ModalWrapper';
 import ModalProjects from './ModalProjects';
 import { StoreContext } from '../../../../../store/StoreContext';
 import { setIsShow } from '../../../../../store/StoreAction';
+import { devBaseImgUrl } from '../../../../helpers/functions-general';
 
 const Project = () => {
 
@@ -14,11 +15,11 @@ const Project = () => {
         isLoading,
         isFetching,
         error,
-        data: portfolio,
+        data: works,
       } = useQueryData(
-        "/v1/portfolio", // endpoint
+        "/v1/works", // endpoint
         "get", // method
-        "portfolio", // key
+        "works", // key
       );
 
       const handleShowMore = (item) => {
@@ -35,25 +36,24 @@ const Project = () => {
                         <SpinnerFetching />
                     ) : (
                         <div className='grid grid-cols-3 gap-5'>
-                            {portfolio?.data.map((item, key) => (
+                            {works?.data.map((item, key) => (
                                 <div
                                     className='project_card'key={key}>
                                     <img
                                         className='w-full h-[300px] object-cover'
-                                        src='https://via.placeholder.com/300x300'
-                                        alt=''
+                                        src={`${devBaseImgUrl} /${item.works_image}`} alt=''
                                     />
                                     <h4 className='text-center pt-5 pb-2 mb-0'>Title</h4>
                                     <ul className='flex justify-between opacity-55 mb-10'>
                                         <li>
-                                            <small>{item.portfolio_category}</small>
+                                            <small>{item.works_title}</small>
                                         </li>
                                         <li>
-                                            <small>{item.portfolio_publish_date}</small>
+                                            <small>{item.works_publish_date}</small>
                                         </li>
                                     </ul>
                                     <p className='line-clamp-2'>
-                                    {item.portfolio_description}
+                                    {item.works_description}
                                     </p>
                                     <button className='btn btn--accent w-full justify-center py-3' onClick={()=>handleShowMore(item)}>View</button>
                                 </div>
