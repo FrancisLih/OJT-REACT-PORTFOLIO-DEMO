@@ -41,7 +41,7 @@ const Project = () => {
                                     className='project_card'key={key}>
                                     <img
                                         className='w-full h-[300px] object-cover'
-                                        src={`${devBaseImgUrl} /${item.works_image}`} alt=''
+                                        src={`${devBaseImgUrl}/${item.works_image}`} alt=''
                                     />
                                     <h4 className='text-center pt-5 pb-2 mb-0'>Title</h4>
                                     <ul className='flex justify-between opacity-55 mb-10'>
@@ -49,7 +49,7 @@ const Project = () => {
                                             <small>{item.works_title}</small>
                                         </li>
                                         <li>
-                                            <small>{item.works_publish_date}</small>
+                                            <small>{item.works_date_published}</small>
                                         </li>
                                     </ul>
                                     <p className='line-clamp-2'>
