@@ -6,9 +6,9 @@ import { queryData } from '../../helpers/queryData'
 import { setIsActive, setMessage, setSuccess } from '../../../store/StoreAction'
 import { StoreContext } from '../../../store/StoreContext'
 
-const ModalConfirm = ({position, endpoint, queryKey, isArchiving, setIsSuccess}) => {
+const ModalConfirm = ({position, endpoint, queryKey, isArchiving}) => {
 
-  const {dispatch} = React.useContext(StoreContext)
+  const {dispatch, store} = React.useContext(StoreContext)
   const handleClose = () => dispatch(setIsActive(false))
   
   const queryClient = useQueryClient();
